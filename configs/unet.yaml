@@ -1,0 +1,30 @@
+experiment:
+  name: unet_faultseg3d
+data:
+  root: "./data/wangjing"
+  train_split: "train"
+  val_split: "validation"
+  vol_shape: [128,128,128]
+  axes: [0,1]
+  img_size: 224
+  train_repeats: 1
+  seed: 42
+  val_count: 15
+  test_count: 5
+train:
+  epochs: 100
+  batch_size: 24
+  lr: 0.001
+  weight_decay: 0.02
+  betas: [0.9, 0.999]
+  num_workers: 8
+  aug_p: 0.7
+  grad_clip: 0.0
+model:
+  name: "unet"
+  n_channels: 1
+  n_classes: 1
+  pretrained: false
+  kwargs: {}
+output:
+  dir: "./runs/unet"
