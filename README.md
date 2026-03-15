@@ -1,10 +1,27 @@
-# FaultSeg3D & Beyond: Deep Learning for 3D Seismic Fault Segmentation
+# FaultSeg3D and JINTAN: Deep Learning for 3D Seismic Fault Segmentation
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-ee4c2c)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-Official repository for our 3D seismic fault segmentation research. We benchmark 9 SOTA architectures on the public **FaultSeg3D** dataset and successfully deploy the best-performing model (**MaxViTUNet**) on a highly noisy, real-world commercial dataset (JINTAN, Sarawak Basin).
+Official repository for our 3D seismic fault segmentation research. We benchmark 9 SOTA architectures on the public **FaultSeg3D** dataset and successfully deploy the best-performing model (**MaxViTUNet**) on a highly noisy, real-world commercial dataset (**JINTAN**, Sarawak Basin).
+
+---
+
+## 📁 Project Structure
+
+A brief overview of the core components in this repository:
+
+```text
+├── configs/                # YAML configuration files for all 9 models
+├── dataset/                # Custom 2.5D slicing dataloader with LRU caching
+├── docs/figures/           # Output visualizations and benchmark plots
+├── JINTAN/                 # Real-world inference scripts (SEGY parsing, sliding-window stitching)
+├── models/                 # Model definitions (UNet, SwinUNet, MaxViTUNet, TransAttUNet, etc.)
+├── benchmark_all.py        # Automated script to train and evaluate all models sequentially
+├── collect_metrics_csv.py  # Utility to aggregate benchmark results into a single table
+└── train_faultseg3d.py     # Main training and validation pipeline
+```
 
 ---
 
